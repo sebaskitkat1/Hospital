@@ -8,7 +8,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - Controles exactos por formulario y por sección.
 
 ## Reglas críticas de UI
-- **Pacientes:** prioridad obligatoria visible: `1=URGENT (URGENTE)`, `2=HIGH (ALTA)`, `3=MEDIUM (MEDIA)`, `4=LOW (BAJA)`.
+- **Pacientes:** prioridad obligatoria visible: `1=URGENTE (URGENT)`, `2=ALTA (HIGH)`, `3=MEDIA (MEDIUM)`, `4=BAJA (LOW)`.
 - **Citas:** estados válidos: `PENDIENTE`, `ATENDIDA`, `CANCELADA`.
 - **Recetas:** solo para citas **ATENDIDAS** (habilitar panel de receta solo en ese estado).
 
@@ -75,7 +75,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
   - `TextBox` Apellidos.
   - `TextBox` CURP.
   - `DateTimePicker` Fecha de nacimiento.
-  - `ComboBox` **Prioridad** (1=Urgente, 2=Alta, 3=Media, 4=Baja) **visible y obligatorio**.
+  - `ComboBox` **Prioridad** (1=URGENTE (URGENT), 2=ALTA (HIGH), 3=MEDIA (MEDIUM), 4=BAJA (LOW)) **visible y obligatorio**.
 - Botones: `Button` Nuevo, Guardar, Editar, Eliminar, Limpiar.
 
 ### Tab: Médicos
@@ -162,6 +162,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política).
 - `ComboBox` Prioridad (visible).
   - Si no se permite edición: usar `Enabled = false` con `AccessibleDescription`: “Prioridad asignada por el personal médico; solo lectura”.
+  - Si está deshabilitado, mostrar el valor también en un `Label` de solo lectura.
 - `Button` “Guardar cambios”.
 
 ### Tab: Agendar Cita
