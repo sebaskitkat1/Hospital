@@ -75,7 +75,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
   - `TextBox` Apellidos.
   - `TextBox` CURP.
   - `DateTimePicker` Fecha de nacimiento.
-  - `ComboBox` **Prioridad** (1=URGENTE (URGENT), 2=ALTA (HIGH), 3=MEDIA (MEDIUM), 4=BAJA (LOW)) **visible y obligatorio**.
+  - `ComboBox` **Prioridad** (ver valores en **Reglas críticas de UI**) **visible y obligatorio**.
 - Botones: `Button` Nuevo, Guardar, Editar, Eliminar, Limpiar.
 
 ### Tab: Médicos
@@ -101,7 +101,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `DateTimePicker` Fecha/Hora.
 - `ComboBox` **Estado** (Pendiente, Atendida, Cancelada).
 - `GroupBox` “Receta” (**habilitar solo si Estado=ATENDIDA**).
-  - Accesibilidad: `AccessibleName` y `AccessibleDescription` en el `GroupBox` con el mensaje “Las recetas solo se capturan para citas atendidas”.
+  - Accesibilidad: `AccessibleName` y `AccessibleDescription` en el `GroupBox` con mensaje localizable (ES/EN): “Las recetas solo se capturan para citas atendidas” / “Prescriptions can only be entered for attended appointments”.
   - Opcional: repetir `AccessibleDescription` en campos clave.
   - `TextBox` Diagnóstico.
   - `TextBox` Medicamento.
@@ -161,8 +161,8 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `TextBox` CURP (solo lectura).
 - `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política).
 - `ComboBox` Prioridad (visible).
-  - Si no se permite edición: usar `Enabled = false` con `AccessibleDescription`: “Prioridad asignada por el personal médico; solo lectura”.
-  - Si está deshabilitado, mostrar el valor también en un `Label` de solo lectura.
+  - Si no se permite edición: usar `Enabled = false` con `AccessibleDescription`: “Prioridad asignada por el personal médico; solo lectura” (localizable).
+  - Aplicar la sección **Accesibilidad y localización** para presentar el valor en modo solo lectura.
 - `Button` “Guardar cambios”.
 
 ### Tab: Agendar Cita
