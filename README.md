@@ -95,7 +95,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `ComboBox` Médico.
 - `DateTimePicker` Fecha/Hora.
 - `ComboBox` **Estado** (Pendiente, Atendida, Cancelada).
-- `GroupBox` “Receta” (**habilitar solo si Estado=Atendida**; si está deshabilitado, añadir `AccessibleDescription`/`Label` que indique el motivo):
+- `GroupBox` “Receta” (**habilitar solo si Estado=Atendida**; si está deshabilitado, añadir `AccessibleDescription`/`Label` con el mensaje: “Las recetas solo se capturan para citas atendidas”):
   - `TextBox` Diagnóstico.
   - `TextBox` Medicamento.
   - `TextBox` Dosis.
@@ -153,7 +153,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `TextBox` Email.
 - `TextBox` CURP (solo lectura).
 - `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política).
-- `ComboBox` Prioridad (visible; si no se permite edición, usar `Enabled = false` y un `ToolTip`/`Label` accesible, además de `AccessibleDescription`, que explique la restricción).
+- `ComboBox` Prioridad (visible; si no se permite edición, usar `Enabled = false` y un `ToolTip`/`Label` accesible, además de `AccessibleDescription`, con el mensaje: “Prioridad asignada por el personal médico; solo lectura”).
 - `Button` “Guardar cambios”.
 
 ### Tab: Agendar Cita
