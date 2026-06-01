@@ -153,7 +153,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `TextBox` Email.
 - `TextBox` CURP (solo lectura).
 - `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política).
-- `ComboBox` Prioridad (visible pero bloqueado para paciente si no se permite edición).
+- `ComboBox` Prioridad (visible; si no se permite edición, usar `Enabled = false` y un `ToolTip`/`Label` accesible que explique la restricción).
 - `Button` “Guardar cambios”.
 
 ### Tab: Agendar Cita
