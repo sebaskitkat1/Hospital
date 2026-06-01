@@ -8,9 +8,14 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - Controles exactos por formulario y por sección.
 
 ## Reglas críticas de UI
-- **Pacientes:** prioridad obligatoria visible: `1=URGENTE`, `2=ALTA`, `3=MEDIA`, `4=BAJA`.
+- **Pacientes:** prioridad obligatoria visible: `1=URGENT (URGENTE)`, `2=HIGH (ALTA)`, `3=MEDIUM (MEDIA)`, `4=LOW (BAJA)`.
 - **Citas:** estados válidos: `PENDIENTE`, `ATENDIDA`, `CANCELADA`.
 - **Recetas:** solo para citas **ATENDIDAS** (habilitar panel de receta solo en ese estado).
+
+## Accesibilidad y localización
+- Los textos de `AccessibleName`, `AccessibleDescription` y mensajes visibles deben **localizarse** según el idioma del usuario.
+- Para campos de solo lectura tipo `TextBox`, preferir `ReadOnly = true` para conservar foco y navegación por teclado.
+- Para listas no editables (`ComboBox`), preferir `DropDownStyle = DropDownList`; si se deshabilitan, mostrar el valor también en un `Label` de solo lectura.
 
 ---
 
