@@ -17,6 +17,13 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - Para campos de solo lectura tipo `TextBox`, preferir `ReadOnly = true` para conservar foco y navegación por teclado.
 - Para listas no editables (`ComboBox`), preferir `DropDownStyle = DropDownList`; si se deshabilitan, mostrar el valor también en un `Label` de solo lectura.
 
+## Convenciones de visualización
+- **Prioridades en ComboBox:** mostrar el formato `1 - URGENTE (URGENT)`, `2 - ALTA (HIGH)`, `3 - MEDIA (MEDIUM)`, `4 - BAJA (LOW)`; almacenar el valor numérico.
+- **Campos obligatorios:** indicar con asterisco `*` o estilo de `Label` consistente (color/ícono) en todos los formularios.
+- **Controles sin edición:**
+  - `DateTimePicker`: usar `Enabled = false` y mostrar el valor en un `Label` de solo lectura.
+  - `ComboBox`: si no se permite edición, mostrar un `Label` de solo lectura con el valor y mantener el `ComboBox` deshabilitado solo si es necesario para consistencia visual.
+
 ---
 
 # 1) Portal de Inicio (Bifurcación)
@@ -101,7 +108,7 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `DateTimePicker` Fecha/Hora.
 - `ComboBox` **Estado** (Pendiente, Atendida, Cancelada).
 - `GroupBox` “Receta” (**habilitar solo si Estado=ATENDIDA**).
-  - Accesibilidad: `AccessibleName` y `AccessibleDescription` en el `GroupBox` con mensaje localizable (ES/EN): “Las recetas solo se capturan para citas atendidas” / “Prescriptions can only be entered for attended appointments”.
+  - Accesibilidad: `AccessibleName` y `AccessibleDescription` en el `GroupBox` con mensaje localizable (ES/EN), por ejemplo: “Deshabilitado: las recetas solo se capturan para citas atendidas” / “Disabled: prescriptions can only be entered for attended appointments”.
   - Opcional: repetir `AccessibleDescription` en campos clave.
   - `TextBox` Diagnóstico.
   - `TextBox` Medicamento.
@@ -159,10 +166,10 @@ Este documento describe la **estructura visual** y los **controles WinForms** re
 - `TextBox` Teléfono.
 - `TextBox` Email.
 - `TextBox` CURP (solo lectura).
-- `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política).
+- `DateTimePicker` Fecha de nacimiento (solo lectura o editable según política; aplicar **Convenciones de visualización**).
 - `ComboBox` Prioridad (visible).
-  - Si no se permite edición: usar `Enabled = false` con `AccessibleDescription`: “Prioridad asignada por el personal médico; solo lectura” (localizable).
-  - Aplicar la sección **Accesibilidad y localización** para presentar el valor en modo solo lectura.
+  - Si no se permite edición: mostrar un `Label` de solo lectura con el valor y usar `AccessibleDescription` localizable: “Prioridad asignada por el personal médico; solo lectura”.
+  - Aplicar **Accesibilidad y localización** y **Convenciones de visualización**.
 - `Button` “Guardar cambios”.
 
 ### Tab: Agendar Cita
